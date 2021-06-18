@@ -1,9 +1,9 @@
 <?php
 
 $mysql_hostname = "localhost";
-$mysql_username = "wcss_peerC";
-$mysql_password = "7s9girx2dJi9YKT3";
-$mysql_database = "wcss_peerC";
+$mysql_username = "user";
+$mysql_password = "password";
+$mysql_database = "db";
 $dsn = "mysql:host=".$mysql_hostname.";dbname=".$mysql_database;
 
 $debug = false;
