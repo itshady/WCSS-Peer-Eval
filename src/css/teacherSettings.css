@@ -1,0 +1,79 @@
+:root {
+    --header-color: #9be4bc;
+    --num-of-tabs: 3;
+}
+
+html, body {
+    overflow-x:hidden;
+}
+
+.wrap-all {
+    width: 70vw;
+    margin:auto;
+    margin-top: 100px;
+}
+
+.left-settings {
+    border: 1px solid lightgrey;
+    padding: 30px;
+    border-right: transparent;
+    width: 550px;
+    height: 70vh;
+    justify-content: center;
+    height: calc(90vh - 100px);
+}
+
+.right-settings {
+    width:fit-content;
+}
+
+.editStudentInfo, .editAccountInfo {
+    cursor:pointer;
+}
+
+.mySettings {
+    border-top: transparent!important;
+    border-bottom: transparent!important;
+}
+
+.accountSettings {
+    border-bottom: transparent!important;
+}
+
+.mySidebar {
+    font-size: 16px;
+    padding-left: 30px;
+    padding-right:20px;
+    padding-top: 33.33%;
+    padding-bottom:33.33%;
+    flex-basis:33.33%;
+    width:176px;
+    text-align:center;
+    border: 1px solid lightgrey;
+    cursor:pointer;
+    font-weight:500;
+}
+
+/*.mySidebar:hover {
+    border-right: 3px solid black;
+    background-color: #f9f9f9;
+}*/
+
+.editTD:hover {
+    outline: 1px solid black;
+}
+
+@media only screen and (max-width: 695px) {
+    .left-settings {
+        margin-left: var(--tab-width-max);
+        margin-right: 0;
+    }
+}
+
+.flex-password {
+    flex-basis:48%;
+}
+
+.flex-password:first-child {
+    margin-right:4%;
+}
