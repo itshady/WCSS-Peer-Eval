@@ -1,0 +1,53 @@
+version: '3.3'
+services:
+  
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+    ports:
+      - "3306:3306"
+    volumes:
+      - my-db:/var/lib/mysql
+
+  web:
+    #image: php:7.2.2-apache
+    build: PHP
+    container_name: php_web
+    depends_on:
+      - db
+    volumes:
+      - ./src/:/var/www/html/
+    ports:
+      - "8100:80"
+    #stdin_open: true
+    #tty: true
+    
+    
+  # db:
+    # image: mysql:5.7
+    # restart: always
+    # environment:
+      # MYSQL_DATABASE: 'db'
+      # # So you don't have to use root, but you can if you like
+      # MYSQL_USER: 'user'
+      # # You can use whatever password you like
+      # MYSQL_PASSWORD: 'password'
+      # # Password for root access
+      # MYSQL_ROOT_PASSWORD: 'password'
+    # ports:
+      # # <Port exposed> : < MySQL Port running inside container>
+      # - '3306:3306'
+    # expose:
+      # # Opens port 3306 on the container
+      # - '3306'
+      # # Where our data will be persisted
+    # volumes:
+      # - my-db:/var/lib/mysql
+
+# Names our volume
+volumes:
+  my-db:
