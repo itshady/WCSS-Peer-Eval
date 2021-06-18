@@ -5,7 +5,7 @@
 
     if (serverPOST() && loginAuth($_POST['user'],$_POST['pass'])) {
         $role = userType($_SESSION['userID']);
-        print_r($role);
+        //print_r($role);
 
         if ($role == "student") header("Location: ./student.php");
         else if ($role == "teacher" || $role == "admin") header("Location: ./teacher.php");
