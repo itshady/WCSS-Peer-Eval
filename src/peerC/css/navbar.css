@@ -1,0 +1,124 @@
+:root {
+    --navbar-width: 0vw;
+    --tab-1: #ff7477; 
+    --tab-2: #60d394;
+    --tab-3: #70d6ff;
+    --tab-width-min: 40px;
+    --tab-width-max: 60px;
+}
+
+.myNavbar {
+    height: 100vh;
+    width: var(--navbar-width);
+    z-index:1;
+}
+
+.myHeader {
+    height: 100px;
+    width:100vw;
+    z-index: 0;
+    background-color: var(--header-color);
+    margin:auto;
+    
+    /*width: calc(100vw - 80px - var(--tab-width-max));
+    max-width: fit-content;
+    left: var(--tab-width-max);
+    /*top-left, top-right, bottom-right, bottom-left*/
+    /*border-radius: 0% 0% 100% 100%;
+    white-space: nowrap;*/
+}
+
+.myHeader > div {
+    flex-flow: row wrap;
+    margin-left: calc(var(--tab-width-max) + 1%);
+    height: 100%;
+}
+
+/*Text in header*/
+.myHeader > div > div:first-child {
+    font-size:25px;
+    font-weight:500;
+}
+
+.myHeader > div > div.welcome-name {
+    font-size:35px;
+    font-weight:900;
+    padding-right:80px;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 484px) {
+    /*.welcome-name {
+        content: "\A";
+        white-space: pre;
+        width: 10px;
+        overflow-wrap: break-word;
+    }*/
+  }
+
+.tab {
+	border-bottom: 25px solid transparent;
+	border-top: 25px solid transparent;
+	height: calc(100vh/var(--num-of-tabs));
+	width: 0px;
+    cursor:pointer;
+    z-index: 2;
+    /*margin-bottom: 100px;*/
+    margin-left: var(--navbar-width);
+    transition: 0.3s;
+}
+
+#tab1 {
+    border-left: var(--tab-width-min) solid var(--tab-1);
+}
+
+#tab2 {
+    border-left: var(--tab-width-min) solid var(--tab-2);
+}
+
+#tab3 {
+    border-left: var(--tab-width-min) solid var(--tab-3);
+}
+
+#tab1:hover {
+    border-left: var(--tab-width-max) solid var(--tab-1);
+}
+
+#tab2:hover {
+    border-left: var(--tab-width-max) solid var(--tab-2);
+}
+
+#tab3:hover {
+    border-left: var(--tab-width-max) solid var(--tab-3);
+}
+
+/*.rotate {
+    transform: rotate(180deg);
+    /* Safari */
+    /*-webkit-transform: rotate(180deg);
+    /* Firefox */
+    /*-moz-transform: rotate(180deg);
+    /* IE */
+    /*-ms-transform: rotate(180deg);
+    /* Opera */
+    /*-o-transform: rotate(180deg);
+    /* Internet Explorer */
+    /*filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=6);
+}*/
+
+.tab-text {
+	height: calc(100vh/var(--num-of-tabs));
+	width: fit-content;
+    z-index: 3;
+    margin-left: var(--navbar-width);
+    color:black;
+    writing-mode: vertical-rl;
+    text-align:center;
+    font-size:25px;
+    font-weight:500;
+    cursor:pointer;
+    color: white;
+}
+
+
+  
